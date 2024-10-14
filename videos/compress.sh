@@ -1,5 +1,5 @@
 
-file=short_teaser
+file=cover
 root_path=.
 path=${root_path}/${file}.mp4
 out_path=${root_path}/${file}_c.mp4
