@@ -15,13 +15,13 @@
     <meta property="og:image:type" content="image/png">
     <meta property="og:url" content="https://humanoid-manipulation/.github.io/"/>
     <meta property="og:title" content="Humanoid Manipulation"/>
-    <meta property="og:description" content="Generalizable Humanoid Manipulation with Improved 3D Diffusion Policies"/>
+    <meta property="og:description" content="Generalizable Humanoid Manipulation with 3D Diffusion Policies"/>
 
     <!-- twitter card -->
     <meta name="twitter:card" content="summary_large_image"/>
     <meta name="twitter:title" content="Humanoid Manipulation"/>
     <meta name="twitter:description"
-          content="Generalizable Humanoid Manipulation with Improved 3D Diffusion Policies"/>
+          content="Generalizable Humanoid Manipulation with 3D Diffusion Policies"/>
     <meta name="twitter:creator" content="@ZeYanjie"/>
 
     <!-- extra metadata for Slack unfurls -->
@@ -145,7 +145,7 @@
 
      <!-- <div class="overlay"></div> -->
     <div class="content" style="padding: 0 0vh">
-        <h1>Generalizable Humanoid Manipulation with Improved 3D Diffusion Policies</h1>
+        <h1>Generalizable Humanoid Manipulation with 3D Diffusion Policies</h1>
         <p>With data from only one scene, our humanoid robot automonously performs skills in the wild open world. All skills in videos are autonomous. Videos are 4x speed.</p>
     </div>
 
@@ -154,7 +154,7 @@
 
 <div class="title_left">
     <h1>
-        Generalizable Humanoid Manipulation with <br>Improved 3D Diffusion Policies
+        Generalizable Humanoid Manipulation <br> with 3D Diffusion Policies
     </h1>
     <div class="author-container">
         <div class="author-name"><a href="https://yanjieze.com/" target="_blank">Yanjie Ze<sup>1</sup></a></div>
@@ -198,12 +198,12 @@
     <div id="abstract">
         <h1>Abstract</h1>
         <p>
-            Humanoid robots capable of autonomous operation in diverse environments have long been a goal for roboticists.
-            However, autonomous manipulation by humanoid robots has largely been restricted to specific scenarios, primarily due to the difficulty of acquiring generalizable skills.
-            Recent advances in 3D visuomotor policies, such as the <a href="https://3d-diffusion-policy.github.io/" target="_blank">3D Diffusion Policy (DP3)</a>, have shown promise in extending these capabilities to wilder environments.
-            However, 3D visuomotor policies often rely on camera calibration and point cloud segmentation, which present challenges for deployment on mobile robots like humanoids.
-            In this work, we introduce the <a href="">Improved 3D Diffusion Policy (iDP3)</a>, a novel 3D visuomotor policy that eliminates these constraints by leveraging egocentric 3D visual representations.
-            We demonstrate that iDP3 enables a full-sized humanoid robot to autonomously perform skills in diverse real-world scenarios, using only data collected in the lab.
+            Humanoid robots capable of autonomous operation in diverse environments have long been a goal for roboticists. 
+            However, autonomous manipulation by humanoid robots has largely been restricted to one specific scene, primarily due to the difficulty of acquiring generalizable skills and the expensiveness of in-the-wild humanoid robot data.
+            In this work, we build a real-world robotic system to address this challenging problem.
+            Our system is mainly an integration of 1) a whole-upper-body robotic teleoperation system to acquire human-like robot data, 2) a 25-DoF humanoid robot platform with a height-adjustable cart and a 3D LiDAR sensor, and 3) an improved 3D Diffusion Policy learning algorithm for humanoid robots to learn from noisy human data.
+            We run more than 2000 episodes of policy rollouts on the real robot for rigorous policy evaluation. 
+            Empowered by this system, we show that using only data collected in one single scene and with only onboard computing, a full-sized humanoid robot can autonomously perform skills in diverse real-world scenarios.
             
         </p>
         <br>
@@ -576,25 +576,24 @@
     <h1>Conclusions</h1>
 
     <p>
-        This work presents a real-world imitation learning system that enables a full-sized humanoid robot to autonomously perform practical manipulation tasks in diverse real-world environments, using training data collected solely in the lab. The key is the usage of the Improved 3D Diffusion Policy (iDP3), a new 3D visuomotor policy for general-purpose robots. Through extensive experiments, we demonstrate the impressive generalization capabilities of iDP3 in the real world.
+        This work presents a real-world imitation learning system that enables a full-sized humanoid robot to generalize practical manipulation skills to diverse real-world environments, trained with data collected solely in one single scene. With more than 2000 rigorous evaluation trials, we present an improved 3D Diffusion Policy, that can learn robustly from human data and perform effectively on our humanoid robot. The results that our humanoid robot can perform autonomous manipulation skills in diverse real-world scenes show the potential of using 3D visuomotor policies in real-world manipulation tasks with data efficiency. 
     </p>
 
     <h1>Limitations </h1>
 
     <p>
-        (1) While our data collection system using Apple Vision Pro is easy to set up, it becomes physically tiring for humans after about 30 minutes, making large-scale data collection difficult. 
-        <br>(2) The RealSense L515 depth sensor produces noisy point clouds, showing the need for better perception techniques. 
-        <br>(3) Collecting fine-grained manipulation skills, like turning a screw, is time-consuming due to teleoperation limitations with Apple Vision Pro. 
-        <br>(4) We avoided using the robot's lower body, as maintaining balance is still a challenge.
-        <br>
-        Overall, scaling up high-quality data is the main bottleneck of our system.
+        (1) Teleoperation with Apple Vision Pro is easy to set up, but it is tiring for human teleoperators, making imitation data hard to scale up within the research lab. 
+        <br>(2) The depth sensor still produces noisy and inaccurate point clouds, limiting the performance of iDP3. 
+        <br>(3) Collecting fine-grained manipulation skills, such as turning a screw, is time-consuming due to teleoperation with AVP; systems like Aloha~\cite{zhao2023aloha} are easier to collect dexterous manipulation tasks at this stage.
+        <br>(4) We avoided using the robot's lower body, as maintaining balance is still challenging due to the hardware constraints brought by current humanoid robots.
+        <br>In general, scaling up high-quality manipulation data is the main bottleneck. In the future, we hope to explore how to scale up the training of 3D visuomotor policies with more high-quality data and how to employ our 3D visuomotor policy learning pipeline to humanoid robots with whole-body control.
     </p>
 
 
 
     <h1>BibTeX</h1>
     <p class="bibtex">@article{ze2024humanoid_manipulation,<br>
-        &nbsp;&nbsp;title &nbsp;&nbsp;= {Generalizable Humanoid Manipulation with Improved 3D Diffusion Policies},<br>
+        &nbsp;&nbsp;title &nbsp;&nbsp;= {Generalizable Humanoid Manipulation with 3D Diffusion Policies},<br>
         &nbsp;&nbsp;author &nbsp;= {Yanjie Ze and Zixuan Chen and Wenhao Wang and Tianyi Chen and Xialin He and Ying Yuan and Xue Bin Peng and Jiajun Wu},<br>
         &nbsp;&nbsp;year &nbsp;&nbsp;&nbsp;= {2024},<br>
         &nbsp;&nbsp;journal = {arXiv preprint arXiv:2410.10803}<br>
